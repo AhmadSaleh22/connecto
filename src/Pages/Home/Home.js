@@ -1,26 +1,37 @@
-import React from "react";
-import Tracker from "../../Components/Cards/Tracker/Tracker";
+import React, {useState} from "react";
+import Layout from "../../Layouts/Layout";
+import Global from "../../Styles/global";
+import logo1 from '../../Images/logo1.png';
+import logo2 from '../../Images/logo2.png';
+const lorem =
+  "+358414361234";
 
-import { Container, Box, BoxTitle, BoxText,Box2 } from "./HomeStyle";
+const data = [
+  {
+    id: Math.random(),
+    title: "#326  Leandro M.",
+    text: lorem,
+    bgColor: "#F7F7F7",
+    logo : logo1, 
+    width : "40px",
+    height: "40px" 
+  },
+  {
+    id: Math.random(),
+    title: "#327  Sam A.",
+    text: lorem,
+    bgColor: "#F7F7F7",
+    logo : logo2,
+    width : "60px",
+    height: "8px"
+  }
+];
 
-export default function Home({ boxData }) {
+export default function Home() {
   return (
-    <Container>
-      {boxData.map(box => (
-          
-        <Box key={box.id} bgColor={box.bgColor}>
-        <Tracker></Tracker>
-          <BoxTitle>{box.title}</BoxTitle>
-          <BoxText>{box.text}</BoxText>
-        </Box>
-      ))
-      }
-      <Box2 bgColor="#EDA9A9">
-      <BoxTitle>Ahmad Saleh</BoxTitle>
-        <BoxText>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, sed iure blanditiis voluptatum nulla quidem minus quam tempora obcaecati necessitatibus inventore! Vitae totam quam pariatur facilis fugit maxime adipisci eaque.
-        </BoxText>
-      </Box2>
-    </Container>
+    <>
+      <Global />
+      <Layout boxData={data} />
+    </>
   );
 }
