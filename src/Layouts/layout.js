@@ -2,49 +2,47 @@ import React, {useState} from "react";
 import Tracker from "../Components/Cards/Tracker/Tracker";
 import { Container,Box, BoxTitle, BoxText,Box2, ListNum, ButtonReady, ButtonCancel, LogoSupplier, ExpandButton } from "../Pages/Home/HomeStyle";
 import { Alert } from 'styled-alert-component';
+import Card from "./Card";
+import ClosedCard from "./ClosedCard";
+import logo1 from '../Images/logo1.png';
+import logo2 from '../Images/logo2.png';
+const lorem =
+  "+358414361234";
 
+const data = [
+  {
+    id: Math.random(),
+    title: "#326  Leandro M.",
+    text: lorem,
+    bgColor: "#F7F7F7",
+    logo : logo1, 
+    width : "40px",
+    height: "40px" 
+  },
+  {
+    id: Math.random(),
+    title: "#327  Sam A.",
+    text: lorem,
+    bgColor: "#F7F7F7",
+    logo : logo2,
+    width : "60px",
+    height: "8px"
+  }
+];
 
-export default function Layout({ boxData }) {
-    const [show, setShow] =useState(false);
+export default function Layout() {
     return (
       <Container>
-        {boxData.map(box => (
-            
-          <Box key={box.id} bgColor={box.bgColor}>
-              <div style={{ display: "flex", justifyContent:"space-between" }}>
-
-                <LogoSupplier src={box.logo} width={box.width} height={box.height}/>
-                <Tracker></Tracker>
-                <ExpandButton />
-              </div>
-            <BoxTitle>{box.title}</BoxTitle>
-            <BoxText 
-            onMouseEnter={() => setShow(true)}
-            onMouseLeave={() => setShow(false)}
-            >{box.text}</BoxText>
-            {show && (
-              <Alert warning style={{ borderRadius:"15px" , fontSize: "12px"}}>No onion please, I’m very allergic. It would be best if no onions was handled.</Alert>
-            )}
-            <div style={{ display: "flex" }}>
-                <ListNum>
-                    <li>x1</li>
-                    <li>x1</li>
-                    <li>x1</li>
-                </ListNum>
-                <ListNum>
-                    <li>Americana</li>
-                    <li>Mexicana</li>
-                    <li>Hawaii</li>
-                </ListNum>
-            </div>
-            <br/>
-            <hr/>
-            <BoxText style={{ textAlign: "left" }}>41,00 €</BoxText>
-            <ButtonReady>Ready to Deliver</ButtonReady>
-            <ButtonCancel>Cancel</ButtonCancel>
-          </Box>
-        ))
-        }
+        <Box bgColor="#F7F7F7">
+            <BoxTitle>Incoming 1</BoxTitle>
+            <Card boxData={data[0]}/>
+            <Card boxData={data[0]}/>
+        </Box>
+        <Box bgColor="#F7F7F7">
+            <BoxTitle>Outgoing 1</BoxTitle>
+            <Card boxData={data[1]}/>
+            <ClosedCard bgColor="white"/>
+        </Box>
         <Box2 bgColor="#EDA9A9">
         <BoxTitle>Ahmad Saleh</BoxTitle>
           <BoxText>

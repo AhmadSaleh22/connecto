@@ -1,24 +1,12 @@
-import px2vw from '../../Utils/px2vw';
+import px2vw from '../Utils/px2vw';
 import styled from "styled-components";
-import {Expand} from "@styled-icons/boxicons-regular/Expand"
-export const Container = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: ${px2vw(32)};
-  max-width: 100%;
-
-  @media (min-width: 1024px) {
-    flex-wrap: nowrap;
-  }
-`;
-
-export const Box = styled.div`
+import {Expand} from "@styled-icons/boxicons-regular/Expand";
+export const CardItem = styled.div`
   display: flex;
   width: ${px2vw(320, 320)};
   min-height: ${px2vw(200, 320)};
   flex-direction: column;
-  padding: ${px2vw(20)};
+  padding: ${px2vw(30)};
   margin: ${px2vw(20)};
   background-color: ${props => props.bgColor};
   height: 100%;
@@ -30,31 +18,8 @@ export const Box = styled.div`
   }
 
   @media (min-width: 1024px) {
-    width: ${px2vw(400)};
-    min-height: ${px2vw(400)};
-    height: 100%;
-  }
-`;
-
-export const Box2 = styled.div`
-  display: flex;
-  width: ${px2vw(200, 200)};
-  min-height: ${px2vw(200, 200)};
-  flex-direction: column;
-  padding: ${px2vw(20)};
-  margin: ${px2vw(20)};
-  background-color: ${props => props.bgColor};
-  height: 100%;
-
-  @media (min-width: 768px) {
-    width: ${px2vw(200, 200)};
-    min-height: ${px2vw(200, 200)};
-    height: 100%;
-  }
-
-  @media (min-width: 1024px) {
-    width: ${px2vw(200)};
-    min-height: ${px2vw(200)};
+    width: ${px2vw(300)};
+    min-height: ${px2vw(300)};
     height: 100%;
   }
 `;
@@ -87,6 +52,7 @@ export const LogoSupplier = styled.img`
   width: ${props => props.width};
   height: ${props => props.height};
 `;
+
 export const ListNum = styled.ul`
   width: ${px2vw(100)};
   margin-top : 15px;
